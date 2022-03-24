@@ -39,7 +39,7 @@ router.delete('/posts/:id', async(ctx, next) => {
     }
     ctx.response.status = 204;
 });
-
+console.log(posts);
 app.use(router.routes()).use(router.allowedMethods());
 
 const port = process.env.PORT || 7777;
