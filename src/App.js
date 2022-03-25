@@ -19,31 +19,29 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    console.log('post: ', post);
     if (post !== null) {
+      async function fetchPost() {
+        await fetch(process.env.REACT_APP_SERVER, {
+          method: 'POST',
+          body: JSON.stringify(post)
+        })
+        setPost(null)
+        return fetchGet()
+      }
       fetchPost()
     }
   }, [post])
 
   useEffect(() => {
+    async function fetchDelete() {
+      await fetch(process.env.REACT_APP_SERVER + del, {
+        method: 'DELETE'
+      })
+      return fetchGet()
+    }
     fetchDelete()
   }, [del])
 
-  async function fetchPost() {
-    fetch(process.env.REACT_APP_SERVER, {
-      method: 'POST',
-      body: JSON.stringify(post)
-    })
-    setPost(null)
-    return fetchGet()
-  }
-
-  async function fetchDelete() {
-    await fetch(process.env.REACT_APP_SERVER + del, {
-    method: 'DELETE'
-  })
-  return fetchGet()
-}
   function fetchGet() {
     fetch(process.env.REACT_APP_SERVER)
     .then(resp => resp.json())
