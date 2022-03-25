@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function CreatePost({handlePost, create, handleInputCreate}) {
+export default function CreatePost({publishPost, create, handleInputCreate, closeCreatePost}) {
   return (
     <div className="create-post">
+
       <div className="create-head">
         <div className="head-publish">
           <span></span>
@@ -21,15 +22,18 @@ export default function CreatePost({handlePost, create, handleInputCreate}) {
           <span></span>
           <p>Еще</p>
         </div>
-        <span className="create-close"/>
+        <Link to={'/'} onClick={closeCreatePost} className="create-close"/>
       </div>
+
       <div className="create-body">
         <img src="" alt="" />
         <input className="create-text" value={create} onChange={handleInputCreate}/>
       </div>
+
       <div className="create-footer">
-        <Link to={'/'} onClick={handlePost} className="create-publish">Опубликовать</Link>
+        <Link to={'/'} onClick={publishPost} className="create-publish">Опубликовать</Link>
       </div>
+
     </div>
   )
 }

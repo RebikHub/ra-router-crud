@@ -5,7 +5,7 @@
 }
 
 #root {
-  width: 900px;
+  max-width: 900px;
   margin: 20px auto;
   background-color: aliceblue;
 }
@@ -45,13 +45,13 @@ a {
 
 
 .list-posts {
-  background-color: white;
-  border: 1px solid #0000003b;
-  border-radius: 3px;
-  margin: 5px;
+
 }
 .post {
-
+  background-color: white;
+  margin: 5px;
+  border: 1px solid #0000003b;
+  border-radius: 3px;
 }
 .post-head {
   display: flex;
@@ -63,11 +63,9 @@ a {
   margin: 10px;
 }
 .post-head-title {
-  margin: 10px;
   align-self: center;
 }
 .name-creator {
-  padding-bottom: 10px;
   color: #1667aa;
 }
 .description-creator {
@@ -77,9 +75,11 @@ a {
 
 }
 .post-body {
+  color: black;
   height: auto;
   padding: 15px;
   font-size: 24px;
+  text-align: left;
 }
 .post-likes {
   display: flex;
@@ -214,13 +214,16 @@ a {
   height: 90%;
   background-color: #0000003b;
 }
-.create-close {
+.create-close, .post-close {
   margin-left: auto;
   margin-right: 10px;
   width: 16px;
   height: 16px;
   background-image: url(../image/close.png);
   cursor: pointer;
+}
+.post-close {
+  margin-top: 10px;
 }
 .create-body, .edit-body {
   position: relative;
@@ -296,6 +299,8 @@ a {
   font-weight: 600;
   width: 300px;
   margin-left: 100px;
+  background-color: aliceblue;
+  border-radius: 20px;
 }
 .edit-photo-png, .edit-friends-png, .edit-emoji-png, .edit-point-png, .edit-gif-png {
   width: 24px;

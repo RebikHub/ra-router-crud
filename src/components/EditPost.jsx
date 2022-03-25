@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-export default function EditPost() {
+export default function EditPost({posts, id, editPost}) {
+  const post = posts.find((el) => el.id === Number(id))
+  const [input, setInput] = useState(post.content)
   return (
     <div className="edit-publish">
 
       <div className="edit-head">
         <h3>Редактировать публикацию</h3>
-        <span className="edit-close"/>
+        <Link to={'/'} className="edit-close"/>
       </div>
 
       <div className="edit-body">
         <img src="" alt="" />
-        <input className="edit-text"/>
+        <input
+          className="edit-text"
+          value={input}
+          onChange={(ev) => setInput(ev.target.value)}/>
       </div>
 
       <div className="edit-tags">
@@ -37,7 +43,13 @@ export default function EditPost() {
         </div>
       </div>
       <div className="edit-save">
-        <button type="button" className="edit-btn">Сохранить</button>
+        <Link to={'/'} type="button" className="edit-btn" onClick={() => {
+            editPost(input)
+            setInput('')
+          }
+        }>
+          Сохранить
+        </Link>
       </div>
     </div>
   )
