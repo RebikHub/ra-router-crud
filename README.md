@@ -1,3 +1,4 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/97xuhuh4t8t5fn9g/branch/master?svg=true)](https://ci.appveyor.com/project/RebikHub/ra-router-crud/branch/master)
 
 [CRUD](https://rebikhub.github.io/ra-router-crud/)
 

@@ -30,7 +30,7 @@ export default function App() {
   }, [del])
 
   async function fetchPost() {
-    fetch('http://localhost:7777/posts', {
+    fetch(process.env.REACT_APP_SERVER, {
       method: 'POST',
       body: JSON.stringify(post)
     })
@@ -39,13 +39,13 @@ export default function App() {
   }
 
   async function fetchDelete() {
-    await fetch(`http://localhost:7777/posts/${del}`, {
+    await fetch(process.env.REACT_APP_SERVER + del, {
     method: 'DELETE'
   })
   return fetchGet()
 }
   function fetchGet() {
-    fetch('http://localhost:7777/posts')
+    fetch(process.env.REACT_APP_SERVER)
     .then(resp => resp.json())
     .then(json => {
       setPosts(json)
