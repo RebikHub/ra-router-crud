@@ -1,11 +1,12 @@
-import React from 'react'
-import { Link, useParams } from 'react-router-dom'
+import React from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 export default function Post(props) {
   const params = useParams();
   let id;
   let time;
   let content;
+
   if (props.post) {
     id = props.post.id;
     time = new Date(props.post.created).toLocaleTimeString();
@@ -15,7 +16,7 @@ export default function Post(props) {
     id = obj.id;
     time = new Date(obj.created).toLocaleTimeString();
     content = obj.content;
-  }
+  };
 
   return (
     <div className="post">
@@ -47,5 +48,5 @@ export default function Post(props) {
     </div>
     {props.children}
   </div>
-  )
-}
+  );
+};

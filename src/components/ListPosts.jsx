@@ -1,6 +1,6 @@
-import React from 'react'
-import FooterPostComment from './FooterPostComment'
-import Post from './Post'
+import React from 'react';
+import FooterPostComment from './FooterPostComment';
+import Post from './Post';
 
 export default function ListPosts({posts}) {
   return (
@@ -11,5 +11,5 @@ export default function ListPosts({posts}) {
           </Post>
         )}
       </div> 
-  )
-}
+  );
+};

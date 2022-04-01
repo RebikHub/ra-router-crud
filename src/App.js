@@ -8,75 +8,82 @@ import Post from "./components/Post";
 import FooterPostButtons from './components/FooterPostButtons';
 
 export default function App() {
-  const [posts, setPosts] = useState([])
-  const [content, setContent] = useState('')
-  const [post, setPost] = useState(null)
-  const [postId, setId] = useState(0)
-  const [del, setDel] = useState(null)
-
-  useEffect(() => {
-    fetchGet()
-  }, [])
-
-  useEffect(() => {
-    if (post !== null) {
-      async function fetchPost() {
-        await fetch(process.env.REACT_APP_SERVER, {
-          method: 'POST',
-          body: JSON.stringify(post)
-        })
-        setPost(null)
-        return fetchGet()
-      }
-      fetchPost()
-    }
-  }, [post])
-
-  useEffect(() => {
-    async function fetchDelete() {
-      await fetch(process.env.REACT_APP_SERVER + del, {
-        method: 'DELETE'
-      })
-      return fetchGet()
-    }
-    fetchDelete()
-  }, [del])
+  const [posts, setPosts] = useState([]);
+  const [content, setContent] = useState('');
+  const [post, setPost] = useState(null);
+  const [postId, setId] = useState(0);
+  const [del, setDel] = useState(null);
 
   function fetchGet() {
     fetch(process.env.REACT_APP_SERVER)
     .then(resp => resp.json())
     .then(json => {
       setPosts(json)
-    })
-  }
+    });
+  };
+
+  useEffect(() => {
+    fetchGet();
+  }, []);
+
+  useEffect(() => {
+    if (post !== null) {
+      function fetchPost() {
+        fetch(process.env.REACT_APP_SERVER, {
+          method: 'POST',
+          body: JSON.stringify(post)
+        })
+          .then(() => fetchGet());
+        setPost(null);
+      }
+      fetchPost();
+    };
+  }, [post]);
+
+  useEffect(() => {
+    function fetchDelete() {
+      fetch(process.env.REACT_APP_SERVER + del, {
+        method: 'DELETE'
+      })
+      .then(() => fetchGet());
+    };
+    fetchDelete();
+  }, [del]);
+
   function publishPost() {
     if (content !== '') {
       setPost({
         content: content,
         id: 0
-      })
-      setContent('')
-    }
-  }
+      });
+      setContent('');
+    };
+  };
+
   function removePost(id) {
-    setDel(id)
-  }
+    setDel(id);
+  };
+
   function inputCreate(ev) {
-    setContent(ev.target.value)
-  }
+    setContent(ev.target.value);
+  };
+
   function closeCreate() {
-    setContent('')
-  }
+    setContent('');
+  };
+
   function editPost(post) {
     setPost({
       content: post,
       id: Number(postId)
-    })
-    setId(0)
-  }
+    });
+    setId(0);
+  };
+
   function idPost(id) {
-    setId(id)
-  }
+    setId(id);
+  };
+
   return (
     <div className="main-page">
       <ButtonCreate/>

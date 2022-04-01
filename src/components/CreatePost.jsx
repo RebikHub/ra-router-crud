@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function CreatePost({publishPost, create, handleInputCreate, closeCreatePost}) {
   return (
@@ -35,5 +35,5 @@ export default function CreatePost({publishPost, create, handleInputCreate, clos
       </div>
 
     </div>
-  )
-}
+  );
+};

@@ -1,8 +1,9 @@
-import React from 'react'
-import { Link, useParams } from 'react-router-dom'
+import React from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 export default function FooterPostButtons({remove, idPost}) {
-  const params = useParams()
+  const params = useParams();
+
   return (
     <div className="post-edit-remove">
       <Link to={'/edit'} onClick={() => idPost(params.postId)} className="edit-btn">
@@ -12,5 +13,5 @@ export default function FooterPostButtons({remove, idPost}) {
         Удалить
       </Link>
     </div>
-  )
-}
+  );
+};

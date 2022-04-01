@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function EditPost({posts, id, editPost}) {
-  const post = posts.find((el) => el.id === Number(id))
-  const [input, setInput] = useState(post.content)
+  const post = posts.find((el) => el.id === Number(id));
+  const [input, setInput] = useState(post.content);
+
   return (
     <div className="edit-publish">
 
@@ -52,5 +53,5 @@ export default function EditPost({posts, id, editPost}) {
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
