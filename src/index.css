@@ -24,6 +24,7 @@ a {
   padding-top: 1px;
   padding-bottom: 1px;
 }
+
 .main-head {
   display: flex;
   background-color: white;
@@ -32,6 +33,7 @@ a {
   height: 50px;
   margin: 5px;
 }
+
 .main-create-btn {
   background-color: #1667aa;
   color: white;
@@ -43,37 +45,36 @@ a {
   font-size: 1rem;
 }
 
-
-.list-posts {
-
-}
 .post {
   background-color: white;
   margin: 5px;
   border: 1px solid #0000003b;
   border-radius: 3px;
 }
+
 .post-head {
   display: flex;
 }
+
 .post-head > img {
   width: 64px;
   height: 64px;
   border-radius: 50%;
   margin: 10px;
 }
+
 .post-head-title {
   align-self: center;
 }
+
 .name-creator {
   color: #1667aa;
 }
+
 .description-creator {
   color: #0000007a;
 }
-.create-time {
 
-}
 .post-body {
   color: black;
   height: auto;
@@ -81,6 +82,7 @@ a {
   font-size: 24px;
   text-align: left;
 }
+
 .post-likes {
   display: flex;
   color: #0000007a;
@@ -90,6 +92,7 @@ a {
   height: 50px;
   align-items: center;
 }
+
 .post-likes::before {
   content: '';
   position: absolute;
@@ -98,35 +101,42 @@ a {
   height: 1px;
   width: 96%;
 }
+
 .likes {
   display: flex;
 }
+
 .likes > span {
   width: 20px;
   height: 20px;
   margin-right: 5px;
   background-image: url(../image/likes.png);
 }
+
 .comment-on {
   display: flex;
 }
+
 .comment-on > span {
   width: 20px;
   height: 20px;
   margin-right: 5px;
   background-image: url(../image/comment.png);
 }
+
 .post-commenting {
   display: flex;
   height: 70px;
   border-top: 1px solid #0000003b;
 }
+
 .post-commenting > img {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   margin: 10px;
 }
+
 .input-comment {
   align-self: center;
   width: 90%;
@@ -143,6 +153,7 @@ a {
   height: 50px;
   margin: 5px;
 }
+
 .edit-btn, .remove-btn {
   color: white;
   border: none;
@@ -151,15 +162,16 @@ a {
   width: 120px;
   font-size: 1rem;
 }
+
 .edit-btn {
   background-color: #1667aa;
   margin: auto 5px auto auto;
 }
+
 .remove-btn {
   background-color: #aa1616;
   margin: auto 15px auto 5px;
 }
-
 
 .create-post {
   background-color: white;
@@ -167,6 +179,7 @@ a {
   border-radius: 3px;
   margin: 5px;
 }
+
 .create-head {
   display: flex;
   margin: 5px;
@@ -182,30 +195,35 @@ a {
   align-items: center;
   cursor: pointer;
 }
+
 .head-publish > span {
   margin-right: 4px;
   width: 16px;
   height: 16px;
   background-image: url(../image/publish.png);
 }
+
 .head-photo > span {
   margin-right: 4px;
   width: 16px;
   height: 16px;
   background-image: url(../image/photo.png);
 }
+
 .head-live > span {
   margin-right: 4px;
   width: 16px;
   height: 16px;
   background-image: url(../image/live.png);
 }
+
 .head-more > span {
   margin-right: 4px;
   width: 16px;
   height: 16px;
   background-image: url(../image/more.png);
 }
+
 .head-photo::before, .head-live::before, .head-more::before {
   content: '';
   position: absolute;
@@ -214,6 +232,7 @@ a {
   height: 90%;
   background-color: #0000003b;
 }
+
 .create-close, .post-close {
   margin-left: auto;
   margin-right: 10px;
@@ -222,19 +241,23 @@ a {
   background-image: url(../image/close.png);
   cursor: pointer;
 }
+
 .post-close {
   margin-top: 10px;
 }
+
 .create-body, .edit-body {
   position: relative;
   min-height: 80px;
 }
+
 .create-body > img, .edit-body > img {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   margin: 10px;
 }
+
 .create-text, .edit-text {
   position: absolute;
   width: 90%;
@@ -242,12 +265,14 @@ a {
   padding-left: 5px;
   border: none;
 }
+
 .create-footer {
   display: flex;
   border-top: 1px solid #0000003b;
   height: 50px;
   margin: 5px;
 }
+
 .create-publish {
   background-color: #1667aa;
   color: white;
@@ -259,19 +284,17 @@ a {
   font-size: 1rem;
 }
 
-
-.edit-publish {
-
-}
 .edit-head {
   display: flex;
   align-items: center;
   height: 45px;
   border-bottom: 1px solid #0000003b;
 }
+
 .edit-head > h3 {
   margin-left: 10px;
 }
+
 .edit-close {
   margin-left: auto;
   margin-right: 10px;
@@ -302,6 +325,7 @@ a {
   background-color: aliceblue;
   border-radius: 20px;
 }
+
 .edit-photo-png, .edit-friends-png, .edit-emoji-png, .edit-point-png, .edit-gif-png {
   width: 24px;
   height: 24px;
@@ -310,33 +334,27 @@ a {
   background-size: cover;
   cursor: pointer;
 }
+
 .edit-photo-png {
   background-image: url(../image/image.png);
 }
-.edit-friends {
 
-}
 .edit-friends-png {
   background-image: url(../image/friend.png);
 }
-.edit-emoji {
 
-}
 .edit-emoji-png {
   background-image: url(../image/smile.png);
 }
-.edit-point {
 
-}
 .edit-point-png {
   background-image: url(../image/point.png);
 }
-.edit-gif {
 
-}
 .edit-gif-png {
   background-image: url(../image/gif.png);
 }
+
 .edit-save {
   display: flex;
   height: 50px;
